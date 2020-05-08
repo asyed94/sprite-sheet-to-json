@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>sprite-sheet-to-json</title>
+  </head>
+
+  <body>
+    <div style="height: 98vh; display: flex; flex-direction: column;">
+      <div>
+        <input id="browse" type="file" accept="image/png, image/jpeg" />
+        <div>
+          <button id="view-json">View JSON</button>
+          <button id="save-json">Save JSON</button>
+        </div>
+      </div>
+
+      <div id="json-div" style="visibility: hidden;">
+        <div
+          id="json-fade"
+          style="
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: black;
+            opacity: 30%;
+          "
+        ></div>
+        <textarea
+          id="json-text"
+          style="
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          "
+          cols="100"
+          rows="40"
+        ></textarea>
+      </div>
+
+      <div
+        style="
+          overflow: hidden;
+          /* display: grid;
+          grid-template-columns: 1fr 160px; */
+          display: flex;
+        "
+      >
+        <div style="height: 1fr; overflow: auto;">
+          <canvas id="disp"></canvas>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+          "
+        >
+          <div style="display: flex; flex-direction: row;">
+            <div style="display: flex; flex-direction: column;">
+              <span style="align-self: center;">Anims</span>
+              <select id="anims" size="10"></select>
+              <button id="add-anim">Add</button>
+              <button id="del-anim">Del</button>
+            </div>
+
+            <div style="display: flex; flex-direction: column;">
+              <span style="align-self: center;">Frames</span>
+              <select id="frames" size="10"></select>
+              <button id="add-frame">Add</button>
+              <button id="del-frame">Del</button>
+            </div>
+          </div>
+
+          <div
+            id="name-panel"
+            hidden="true"
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              visibility: hidden;
+            "
+          >
+            <label style="text-align: right;">Name:</label>
+            <input id="name-text" type="text" size="12" />
+          </div>
+
+          <div
+            id="frames-panel"
+            hidden="true"
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              visibility: hidden;
+            "
+          >
+            <label style="text-align: right;">Frames:</label>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: max-content max-content;
+                gap: 5px;
+              "
+            >
+              <label style="text-align: right;">
+                X:<input id="x" type="text" size="1" value="0" />
+              </label>
+
+              <label style="text-align: right;">
+                Y:<input id="y" type="text" size="1" value="0" />
+              </label>
+
+              <label style="text-align: right;">
+                W:<input id="w" type="text" size="1" value="64" />
+              </label>
+
+              <label style="text-align: right;">
+                H:<input id="h" type="text" size="1" value="32" />
+              </label>
+            </div>
+
+            <div
+              style="
+                display: grid;
+                grid-template-columns: max-content max-content;
+                gap: 5px;
+              "
+            >
+              <label for="frame-w" style="text-align: right;">Frame W:</label>
+              <input
+                id="frame-w"
+                name="frame-w"
+                type="text"
+                size="1"
+                value="16"
+              />
+              <label for="frame-h" style="text-align: right;">Frame H:</label>
+              <input
+                id="frame-h"
+                name="frame-h"
+                type="text"
+                size="1"
+                value="32"
+              />
+              <label for="frame-count" style="text-align: right;">Count:</label>
+              <input
+                id="frame-count"
+                name="frame-count"
+                type="text"
+                size="1"
+                value="4"
+              />
+            </div>
+
+            <button id="create" type="button">Create</button>
+            <button id="cancel" type="button">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="bundle.js"></script>
+  </body>
+</html>

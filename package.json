@@ -10,6 +10,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
     "rollup": "^1.16.2",
+    "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-terser": "^5.0.0",
     "typescript": "^3.8.3"
   },
