@@ -343,10 +343,14 @@ function hideJson() {
 }
 
 function saveJson() {
-  const srcName = browseBtn.files.length > 0 ? browseBtn.files[0].name : '';
-  const jsonName = srcName.replace(/\.\w+/, '.json');
+  const srcName = browseBtn.files.length > 0 ? browseBtn.files[0].name : 'name';
+  const split = srcName.split('.');
+  const name = split.length > 1 ? split.slice(0, -1).join('.') : srcName;
+  const jsonName = name + '.json';
+
   const jsonHash = anims2json(anims.values(), srcName, main.width, main.height);
   const json = JSON.stringify(jsonHash, null, 2);
+
   download(jsonName, json);
 }
 
