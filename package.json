@@ -22,7 +22,8 @@
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "dev": "npm-run-all --parallel start watch",
-    "start": "serve public && "
+    "start": "serve public && ",
+    "deploy": "scripts/commit-to-gh-pages.sh"
   },
   "description": "A simple tool to create texture atlas JSON hashes from sprite sheet images.",
   "version": "1.0.0",
