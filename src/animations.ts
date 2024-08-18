@@ -1,12 +1,8 @@
-export const Anim  = class {
-	name /** @type {string} */;
-	frames /** @type {Frame[]} */;
-}
+export interface Anim {
+	name: string;
+	frames: Frame[];
+  }
 
-let a = 15;
-
-
-let b;
 
 export interface Frame {
   x: number;
