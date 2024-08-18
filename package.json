@@ -13,7 +13,7 @@
     "JSON"
   ],
   "author": "Aamir Syed, BattoJutsu",
-  "license": "SEE LICENSE IN LICENSE file",
+  "license": "ISC",
   "devDependencies": {
     "serve": "^14.2.3"
   }
