@@ -1,7 +1,12 @@
-export interface Anim {
-  name: string;
-  frames: Frame[];
+export const Anim  = class {
+	name /** @type {string} */;
+	frames /** @type {Frame[]} */;
 }
+
+let a = 15;
+
+
+let b;
 
 export interface Frame {
   x: number;
@@ -15,36 +20,36 @@ export interface Frame {
  * https://gamedev.stackexchange.com/a/116000
  */
 export interface TexturePackerJsonHashFrame {
-  frame: {
-    x: number;
-    y: number;
-    w: number;
-    h: number;
-  };
-  rotated: boolean;
-  trimmed: boolean;
-  spriteSourceSize: {
-    x: number;
-    y: number;
-    w: number;
-    h: number;
-  };
+	frame: {
+		x: number;
+		y: number;
+		w: number;
+		h: number;
+	};
+	rotated: boolean;
+	trimmed: boolean;
+	spriteSourceSize: {
+		x: number;
+		y: number;
+		w: number;
+		h: number;
+	};
   sourceSize: {
-    w: number;
-    h: number;
+	w: number;
+	h: number;
   };
 }
 
 export interface TexturePackerJsonHash {
   frames: {[name: string]: TexturePackerJsonHashFrame};
   meta: {
-    app: string;
-    version: string;
-    image: string;
-    format: string;
-    size: {w: number; h: number};
-    scale: string;
-    smartupdate?: string;
+	app: string;
+	version: string;
+	image: string;
+	format: string;
+	size: {w: number; h: number};
+	scale: string;
+	smartupdate?: string;
   };
 }
 
@@ -75,22 +80,22 @@ export function newAnim(
   const frames: Frame[] = [];
 
   for (let row = 0; row < rows; row++) {
-    for (let col = 0; col < cols; col++) {
-      if (frameCount > 0) {
-        frames.push({
-          x: x + col * frameW,
-          y: y + row * frameH,
-          w: frameW,
-          h: frameH,
-        });
-        frameCount--;
-      }
-    }
+	for (let col = 0; col < cols; col++) {
+	  if (frameCount > 0) {
+		frames.push({
+		  x: x + col * frameW,
+		  y: y + row * frameH,
+		  w: frameW,
+		  h: frameH,
+		});
+		frameCount--;
+	  }
+	}
   }
 
   return {
-    name,
-    frames,
+	name,
+	frames,
   };
 }
 
@@ -101,30 +106,30 @@ export function anims2json(
   sourceH: number
 ): TexturePackerJsonHash {
   const hash: TexturePackerJsonHash = {
-    frames: {},
-    meta: {
-      app: 'sprite-sheet-to-json',
-      version: '1.0.0',
-      image: sourceName,
-      format: 'RGBA8888',
-      size: {w: sourceW, h: sourceH},
-      scale: '1',
-    },
+	frames: {},
+	meta: {
+	  app: 'sprite-sheet-to-json',
+	  version: '1.0.0',
+	  image: sourceName,
+	  format: 'RGBA8888',
+	  size: {w: sourceW, h: sourceH},
+	  scale: '1',
+	},
   };
 
   for (const anim of anims) {
-    for (const [i, {x, y, w, h}] of anim.frames.entries()) {
-      hash.frames[`${anim.name}-${i}`] = {
-        frame: {x, y, w, h},
-        rotated: false,
-        trimmed: false,
-        spriteSourceSize: {x, y, w, h},
-        sourceSize: {
-          w: sourceW,
-          h: sourceH,
-        },
-      };
-    }
+	for (const [i, {x, y, w, h}] of anim.frames.entries()) {
+	  hash.frames[`${anim.name}-${i}`] = {
+		frame: {x, y, w, h},
+		rotated: false,
+		trimmed: false,
+		spriteSourceSize: {x, y, w, h},
+		sourceSize: {
+		  w: sourceW,
+		  h: sourceH,
+		},
+	  };
+	}
   }
 
   return hash;
