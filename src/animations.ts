@@ -1,42 +1,33 @@
-export interface Anim {
-	name: string;
-	frames: Frame[];
-  }
+export class Anim {
+	name /** @type {string} */
+	frames /** @type {Frame[]} */
+}
 
 
-export interface Frame {
-  x: number;
-  y: number;
-  w: number;
-  h: number;
+export class Frame {
+  x /** @type {number} */;
+  y /** @type {number} */;
+  w /** @type {number} */;
+  h /** @type {number} */;
 }
 
 /**
  * From Andreas Löw, creator of TexturePacker:
  * https://gamedev.stackexchange.com/a/116000
+ * Modified 2024 BattoJutsu
  */
-export interface TexturePackerJsonHashFrame {
-	frame: {
-		x: number;
-		y: number;
-		w: number;
-		h: number;
-	};
-	rotated: boolean;
-	trimmed: boolean;
-	spriteSourceSize: {
-		x: number;
-		y: number;
-		w: number;
-		h: number;
-	};
+export class TexturePackerJsonHashFrame {
+	frame /** @type {Frame} */;
+	rotated /** @type {boolean} */;
+	trimmed /** @type {boolean} */;
+	spriteSourceSize /** @type {Frame} */;
   sourceSize: {
 	w: number;
 	h: number;
   };
 }
 
-export interface TexturePackerJsonHash {
+export class TexturePackerJsonHash {
   frames: {[name: string]: TexturePackerJsonHashFrame};
   meta: {
 	app: string;
