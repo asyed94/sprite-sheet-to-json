@@ -4,9 +4,7 @@ Copyright 2024 BattoJutsu
 Source code is either in ISC or AGPLv3
 Details in AGPLv3License and ISC_LICENSE Files
 
-Anything committed by BattoJutsu falls under AGPLv3 License only. 
+Anything committed by BattoJutsu falls under AGPLv3 License.
 Anything committed by Aamir Syed in 2023 and earlier is under ISC License.
-
-I will try to put a comment surrounding source code that is AGPLv3 or in a header comment if the entire file is covered.
 
 Note: ISC is compatible with AGPLv3
