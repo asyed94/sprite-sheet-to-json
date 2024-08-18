@@ -1,16 +1,16 @@
-export class Anim {
+class Anim {
 	name /** @type {string} */;
 	frames /** @type {Frame[]} */;
 }
 
-export class Frame {
+class Frame {
 	x /** @type {number} */;
 	y /** @type {number} */;
 	w /** @type {number} */;
 	h /** @type {number} */;
 }
 
-export class SourceSize {
+class SourceSize {
 	w /** @type {number} */;
 	h /** @type {number} */;
 }
@@ -30,7 +30,7 @@ class Meta {
  * https://gamedev.stackexchange.com/a/116000
  * Modified 2024 BattoJutsu
  */
-export class TexturePackerJsonHashFrame {
+class TexturePackerJsonHashFrame {
 	frame /** @type {Frame} */;
 	rotated /** @type {boolean} */;
 	trimmed /** @type {boolean} */;
@@ -38,7 +38,7 @@ export class TexturePackerJsonHashFrame {
 	sourceSize /** @type {SourceSize} */;
 }
 
-export class TexturePackerJsonHash {
+class TexturePackerJsonHash {
 	frames; /** @type {TexturePackerJsonHashFrame[]} */
 	meta /** @type {Meta} */;
 }
@@ -55,7 +55,7 @@ export class TexturePackerJsonHash {
  * @param {number} frameCount 
  * @returns {Anim}
  */
-export function newAnim(name, x, y, w, h, frameW, frameH, frameCount = Infinity) {
+function newAnim(name, x, y, w, h, frameW, frameH, frameCount = Infinity) {
 	// w, h, frameW, frameH, frameCount should always be > 0
 	if (w < 1) w = 1;
 	if (h < 1) h = 1;
@@ -100,7 +100,7 @@ export function newAnim(name, x, y, w, h, frameW, frameH, frameCount = Infinity)
  * @param {number} sourceH 
  * @returns {TexturePackerJsonHash}
  */
-export function anims2json(anims, sourceName, sourceW, sourceH) {
+function anims2json(anims, sourceName, sourceW, sourceH) {
 	const /** @type {TexturePackerJsonHash} */ hash = {
 		frames: [],
 		meta: {
