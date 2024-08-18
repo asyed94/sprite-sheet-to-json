@@ -1,15 +1,10 @@
-ISC License (ISC)
-
 Copyright 2020 Aamir Syed
+Copyright 2024 BattoJutsu
 
-Permission to use, copy, modify, and/or distribute this software for any purpose
-with or without fee is hereby granted, provided that the above copyright notice
-and this permission notice appear in all copies.
+Source code is either in ISC or AGPLv3
+Details in AGPLv3License and ISC_LICENSE Files
 
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
-FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
+Anything committed by BattoJutsu falls under AGPLv3 License only. 
+Anything committed by Aamir Syed in 2023 and earlier is under ISC License.
+
+I will try to put a comment surrounding source code that is AGPLv3 or in a header comment if the entire file is covered.
