@@ -20,7 +20,7 @@ class Meta {
 	version /** @type {string} */;
 	image /** @type {string} */;
 	format /** @type {string} */;
-	size: { w: number; h: number };
+	size /** @type {SourceSize} */;
 	scale /** @type {string} */;
 	smartupdate /** @type {string=} */;
 }
@@ -70,7 +70,7 @@ export function newAnim(name, x, y, w, h, frameW, frameH, frameCount = Infinity)
 	const rows = Math.max(Math.ceil(h / frameH), 0);
 	const cols = Math.max(Math.ceil(w / frameW), 0);
 
-	const frames: Frame[] = [];
+	const frames /** @type {Frame[]} */ = [];
 
 	for (let row = 0; row < rows; row++) {
 		for (let col = 0; col < cols; col++) {
